@@ -1,6 +1,6 @@
 public class KanoSan{
 	public static void main(String[] args){
-		int[] nums=new int[20];
+		int[] nums=new int[21];
 		for(int i=0;i<nums.length;i++){
 			nums[i]=i;
 		}
