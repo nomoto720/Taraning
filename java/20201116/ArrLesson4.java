@@ -1,9 +1,8 @@
 import java.util.*;
 public class ArrLesson4{
 	public static void main(String[] args){
-		
-		String [][] fourWs =new String[4][];
 		String [] names={"いつ","誰が","どこで","何を"};
+		String [][] fourWs =new String[names.length][];
 		for(int i=0;i<names.length;i++){
 			System.out.printf("%sはいくつ>",names[i]);
 			int num=new Scanner(System.in).nextInt();
