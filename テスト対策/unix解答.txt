@@ -1,0 +1,8 @@
+Unix ƒRƒ}ƒ“ƒh–â‘è‰ð“š
+Q1,pwd
+Q2,ls
+Q3,ls -la
+Q4,ls -li
+Q5,ls -lt
+Q6,change directory
+Q7,cd ~/Documents
