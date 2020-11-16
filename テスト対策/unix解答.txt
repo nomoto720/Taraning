@@ -6,3 +6,17 @@ Q4,ls -li
 Q5,ls -lt
 Q6,change directory
 Q7,cd ~/Documents
+Q8,cd -
+Q9,cd ..
+Q10,cd
+Q11,mkdir bashTest
+Q12,touch
+Q13,touch file.txt
+Q14,echo "memo1" > file.txt
+Q15,cat file.txt
+Q16,cp file.txt file2.txt
+Q17,cp -r bashTest ~/Documents/
+Q18,recursive(çƒãA)
+Q19,mv 
+Q20,mv file.txt file2.txt
+Q21,mv file.txt ~/Documents/
