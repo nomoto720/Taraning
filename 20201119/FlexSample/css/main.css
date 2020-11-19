@@ -1,0 +1,33 @@
+body{
+	color:#333;
+}
+.container{
+	width:960px;
+	margin:0 auto;
+}
+header{
+	height:250px;
+	background-image:url(../images/header_bg.png);
+	background-size:cover;
+}
+header h1{
+	font-size:80px;
+	text-align:center;
+	line-height:250px;
+}
+nav ul{
+	padding:5px 30px;
+	background:#666;
+	display:flex;
+	justify-content:flex-end;
+}
+nav ul li a{
+	display:block;
+	padding:5px 10px;
+	border-radius:5px;
+	background:#999;
+	color:white;
+	text-decoration:none;
+	margin:5px 10px;
+	border:1px solid #333;
+}
