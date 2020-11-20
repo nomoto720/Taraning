@@ -17,3 +17,4 @@ c+i+(　で丸カッコの中をすべて削除
 ## 3時間目
 
 [flexbox](https://joytas.net/programming/website/flexbox)
+<a href="https://joytas.net/sample/FlexSample/" target="brank">
