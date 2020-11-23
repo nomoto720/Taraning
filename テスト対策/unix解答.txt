@@ -20,3 +20,7 @@ Q18,recursive(çƒãA)
 Q19,mv 
 Q20,mv file.txt file2.txt
 Q21,mv file.txt ~/Documents/
+Q22,rm
+q23,rm file.txt
+Q24,rm *.txt
+Q25 rm Å[rf
