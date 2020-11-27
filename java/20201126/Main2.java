@@ -5,9 +5,8 @@ public class Main{
 		System.out.print("配列の要素数を入力してください>");
 		int count=new Scanner(System.in).nextInt();
 		int min=-10;int max=10;
-		int[] arrRandom = Common.arrRandomRange(min,max,count);
 		System.out.println("配列を生成しました。");
-		System.out.println(Arrays.toString(arrRandom));
+		System.out.println(Arrays.toString(Common.arrRandomRange(min,max,count)));
 		int[] arrFormer=Common.arrClone(arrRandom);
 		while(true){
 		System.out.print("1...元の配列を表示,2...配列を昇順ソート,3...配列を降順ソート,4...終了>");
