@@ -3,8 +3,12 @@ public class Hero{
 	int hp;			
 
 	public Hero(){}
-	public Hero(String name,int hp){
+	public Hero(String name){
 		this.name=name;
+		this.hp=hp;
+	}
+	public Hero(String name,int hp){
+		this(name);
 		this.hp=hp;
 	}
 	public void sleep(){
