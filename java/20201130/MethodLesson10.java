@@ -12,12 +12,11 @@ public class MethodLesson10{
 		while(true){
 			System.out.print("価格を入力(0でお会計)>");
 			int price=scan.nextInt();
-			sumPrice+=price;
 			if(price==0){
 				break;
 			}
+			sumPrice+=price;
 		}
-		sumPrice=priceIncludir(sumPrice,tax);
-		System.out.printf("お買い物合計は%d円(税込み)です。%n",sumPrice);
+		System.out.printf("お買い物合計は%d円(税込み)です。%n",priceIncludir(sumPrice,tax));
 	}
 }
