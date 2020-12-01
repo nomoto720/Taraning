@@ -1,65 +1,66 @@
 import java.util.*;
 public class HitBlow{
 	public static void main(String[] args){
+		HitBlowbed hitBlowbed=new HitBlowbed();
 		Scanner scan=new Scanner(System.in);
 		System.out.print("要素数(10以下):");
-		int elementNum=scan.nextInt();
-		HitBlowbed hitBlowbed=new HitBlowbed(elementNum);
-		hitBlowbed.randomNum(elementNum);
+		hitBlowbed.elementNum=scan.nextInt();
+		hitBlowbed.randomNum(hitBlowbed.elementNum);
+		//System.out.println(hitBlowbed.correctNum);
+		String str=scan.nextLine();
 		while(true){
-		System.out.prinf("%dの数字を入力せよ>",elementNum);
-		String inputNum=scan.nextLine();
-		hitBlowbed.hitBlowNum(inputNum);
+			System.out.printf("%d桁の数字を入力せよ>",hitBlowbed.elementNum);
+			String inputNum=scan.nextLine();
+			hitBlowbed.hitBlowNum(inputNum);
+			if(hitBlowbed.hit==4){
+				return;
+			}		
 		}
 	}
-
-
-	class HitBlowbed{
+}
+class HitBlowbed{
 		String correctNum;
-		int elemntNum;
+		int elementNum;
 		int count;
-	}
-	public HitBlowbed(int elementNum){
-		this.elementNum=elementNum;
-	}
+		int hit;
 	public void randomNum(int elementNum){
 		Random ram=new Random();
 		String str="";
 		for(int i=0;i<elementNum;i++){
-			str=""+ram.netInt(10);
+			str+=""+ram.nextInt(10);
 		}
 		this.correctNum=str;
 	}	
 	public void hitBlowNum(String inputNum){
-				int hit;
-				int blow;
+				this.hit=0;
+				int blow=0;
+				boolean[] hitNum=new boolean[this.elementNum];
 				count+=1;
-		for(int i=0;i<this.elementNum;i++){
-				int n=character.getNumericValue(inputNum.charAt(i));
-				int c=character.getNumericValue(this.correctNum.charAt(i));
+		for(int i=0;i<inputNum.length();i++){
+				int n=Character.getNumericValue(inputNum.charAt(i));
+				int c=Character.getNumericValue(this.correctNum.charAt(i));
 				if(n==c){
-					hit+=1;
+					this.hit+=1;
+					hitNum[i]=true;
 				}
 		}
-		for(int i=0;i<this.elementNum;i++){
-				int n=character.getNumericValue(inputNum.charAt(i));
+		for(int i=0;i<inputNum.length();i++){
+				int n=Character.getNumericValue(inputNum.charAt(i));
 			for(int j=0;j<this.elementNum;j++){
-				int c=character.getNumericValue(this.correctNum.charAt(j));
-				if(i==j){
+				int c=Character.getNumericValue(this.correctNum.charAt(j));
+				if(i==j || hitNum[i]==true || hitNum[j]==true ){
 					continue;
-				}else if(n==j){
-
-				}else{
+				}else if(n==c){
+					blow+=1;
 				}
 
 			}
 		}
-		System.out.printf("Hit=%d/",hit);
-		if(hit==4){
-			System.out.plintln("Nice Hit!!");
-			System.out.printf("正解=%s",this.correctNum);
+		System.out.printf("Hit=%d/Blow=%d%n",hit,blow);
+		if(this.hit==4){
+			System.out.println("Nice Hit!!");
+			System.out.printf("正解=%s%n",this.correctNum);
 			System.out.printf("Count:%d%n",this.count);
-			return;
 		}
 	}
 }
