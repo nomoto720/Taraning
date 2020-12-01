@@ -32,11 +32,12 @@ public class Flowerbed{
 	public void showStatus(){
 		System.out.printf("花の色は%s%n",this.color);
 		System.out.print("#");
-		for(int i=0;i<this.bloom;i++){
-			System.out.print("*");
-		}
-		for(int i=0;i<this.seedNum-this.bloom;i++){
+		for(int i=0;i<this.seedNum;i++){
+			if(i<this.bloom){
+				System.out.print("*");
+			}else{
 			System.out.print(".");
+			}
 		}
 		System.out.println("#");
 	}
