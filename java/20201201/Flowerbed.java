@@ -24,8 +24,8 @@ public class Flowerbed{
 		}else if(this.water==0){
 			System.out.println("水が空っぽです。");
 		}else{
-			this.water-=1;
-			this.bloom+=1;
+			this.water--;
+			this.bloom++;
 			System.out.println("水を撒きました。");
 		}
 	}
