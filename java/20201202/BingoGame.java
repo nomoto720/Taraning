@@ -1,47 +1,150 @@
 import java.util.*;
 public class BingoGame{
-		public static void main(String[] args){
+	public static void main(String[] args){
 		Scanner scan=new Scanner(System.in);
-		BingoGameApp b1=new BingoGameApp();
-		String[][] card=b1.makeCard(5);
-		b1.showCard(card);
-		scan.nextLine();
-		
+		final int[] centerIndex={2,2};
+		int[][] card=makeCard(5,99);
+		card[centerIndex[0]][centerIndex[1]]=0;
+		showCard(card);
+		int[] balls=createBalls(99);
+		for(int i=0;;i++){
+			scan.nextLine();
+			int bingoCount=drawBallCountLine(card,balls[i]);
+			System.out.printf("%d!(%d回目)",balls[i],i+1);
+			if(bingoCount>0){
+				System.out.print(":BINGO!");
+			}
+			System.out.println();
+			showCard(card);
+			if(bingoCount>0){
+				return;
+			}
+		}	
+	}
+	static int[] makeNums(int max){
+		int[] nums=new int[max];
+		for(int i=0;i<max;i++){
+			nums[i]=i+1;
 		}
-}
-class BingoGameApp{
-	int count=0;
-  static String[][] makeCard(int width){
-    Random rand=new Random();
-    String[][] card=new String[width][width];
-    for(int i=0;i<card.length;i++){
-      for(int j=0;j<card.length;j++){
-        int ran=rand.nextInt(99)+1;
-				card[i][j]=String.valueOf(ran);
-      }
-    }
-    return card;
-  }
-	 static void showCard(String[][] card){
-		if(this.count==1){
-			Random rand=new Random();
-			int ram=rand.nextInt(99)+1;
-			String str=String.valueOf(ram);
+		return nums;
+	}
+ 	static int[][] makeCard(int width,int max){
+		int[] nums=makeNums(max);
+		arrSuffle(nums);
+		int[][] card=new int[width][width];
+		for(int i=0;i<card.length;i++){
+	 		for(int j=0;j<card[i].length;j++){
+			card[i][j]=nums[i*width+j];
+      			}
+    		}	
+   	 return card;
+  	}
+	static int[] arrSuffle(int[] nums){
+		Random rand=new Random();
+		for(int i=0;i<nums.length-1;i++){
+			int index=rand.nextInt(nums.length-i);
+			int temp=nums[index];
+			nums[index]=nums[nums.length-1-i];
+			nums[nums.length-1-i]=temp;
 		}
-    for(int i=0;i<card.length;i++){
-      for(int j=0;j<card[i].length;j++){
-				if(i==2 && j==2){
-					card[i][j]="@@";
-					System.out.print(card[i][j]);
+		return nums;
+	}
+	static void showCard(int[][] card){
+    		for(int i=0;i<card.length;i++){
+      			for(int j=0;j<card[i].length;j++){
+				if(card[i][j]==0){
+					System.out.print(" @@");
 					continue;
-				}else if(str.equals(card[i][j])){
-						card[i][j]="@@";
-						System.out.print(card[i][j]);
 				}
-        System.out.printf("%3s",card[i][j]);
-      }
-      System.out.println();
-			this.count++;
-    }
-  }
+        		System.out.printf("%3s",card[i][j]);
+     			}
+     			System.out.println();
+   		}
+  	}	
+	static int[] createBalls(int max){
+		int[] balls=makeNums(max);
+		arrSuffle(balls);
+		return balls;
+	}
+	static int drawBallCountLine(int[][] card,int num){
+		for(int i=0;i<card.length;i++){
+			for(int j=0;j<card[i].length;j++){
+				if(card[i][j]==num){
+					card[i][j]=0;
+				}
+			}
+		}
+		int bingoLine=countBingoLine(card);
+		return countBingoLine(card);
+	}
+	static boolean isSame(int[] line){
+		boolean isSame=true;
+		int first=line[0];
+		for(int i=1;i<line.length;i++){
+			if(first != line[i]){
+				isSame=false;
+				break;
+			}
+		}
+		return isSame;
+	}
+	static int[][] horizontalLines(int[][] card){
+		int[][] lines=new int[card.length][card.length];
+		for(int i=0;i<card.length;i++){
+			for(int j=0;j<card[i].length;j++){
+				lines[i][j]=card[i][j];
+			}
+		}
+		return lines;
+	}
+	static int[][] verticalLines(int[][] card){
+		int[][] lines=new int[card.length][card.length];
+		for(int i=0;i<card.length;i++){
+			for(int j=0;j<card[i].length;j++){
+				lines[i][j]=card[j][i];
+			}
+		}
+		return lines;
+	}
+	static int[][] crossLines(int[][] card){
+		int[][] lines=new int[2][card.length];
+		for(int i=0;i<lines.length;i++){
+			for(int j=0;j<card.length;j++){
+				if(i==0){
+					lines[i][j]=card[j][j];
+				}else{
+					lines[i][j]=card[j][card.length-1-j];
+				}
+			}
+		}
+		return lines;
+	}
+	static int countBingoLine(int[][] card){
+		int count=0;
+		int[][] h=horizontalLines(card);
+		int[][] v=verticalLines(card);
+		int[][] c=crossLines(card);
+		int[][] lines=mergeThreeLines(h,v,c);
+		for(int[] line:lines){
+			if(isSame(line)){
+				count++;
+			}
+		}
+		return count;
+	}
+	static int[][] mergeThreeLines(int[][] h,int[][] v,int[][] c){
+		int[][] lines=new int[h.length+v.length+c.length][h[0].length];
+		for(int i=0;i<lines.length;i++){
+			int[] line;
+			if(i<h.length){
+				line=h[i];
+			}else if(i<h.length+v.length){
+				line=v[i-h.length];
+			}else{
+				line=c[i-h.length-v.length];
+			}
+			lines[i]=line;
+		}
+		return lines;
+	}
 }
