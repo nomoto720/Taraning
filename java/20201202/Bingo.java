@@ -77,13 +77,18 @@ public class Bingo{
 	}
 	static int countBingoLine(int[][] card){
 		int count=0;
-		int[][] lines=horizontalLines(card);
+		int[][] h=horizontalLines(card);
+		int[][] v=verticalLines(card);
+		int[][] c=crossLines(card);
+		int[][] lines=mergeThreeLines(h,v,c);
 		for(int[] line:lines){
 			if(isSame(line)){
 				count++;
 			}
 		}
-		lines=verticalLines(card);
+		return count;
+	}
+	/*	lines=verticalLines(card);
 		for(int[] line:lines){
 			if(isSame(line)){
 				count++;
@@ -96,9 +101,20 @@ public class Bingo{
 			}
 		}
 		return count;
-	}
+	}*/
 	static int[][] mergeThreeLines(int[][] h,int[][] v,int[][] c){
 		int[][] lines=new int[h.length+v.length+c.length][h[0].length];
-		
+		for(int i=0;i<lines.length;i++){
+			int[] line;
+			if(i<h.length){
+				line=h[i];
+			}else if(i<h.length+v.length){
+				line=v[i-h.length];
+			}else{
+				line=c[i-h.length-v.length];
+			}
+			lines[i]=line;
+		}
+		return lines;
 	}
 }
