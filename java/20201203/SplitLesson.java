@@ -1,8 +1,8 @@
 import java.util.*;
 public class SplitLesson{
 	public static void main(String[] args){
-		String str="りんご,みかん,ばなな";
-		String[] data=str.split(",");
+		String str="りんごとみかんとばななとと";//CSVデータ
+		String[] data=str.split("と",-1);
 		System.out.println(Arrays.toString(data));
 	}
 }
