@@ -2,8 +2,8 @@ public class Main{
 	public static void main(String[] args){
 		//SuperHero sh=new SuperHero();
 		//sh.run();
-		//Weapon w=new Weapon();
-
+		//Weapon w=new Weapon();	
+		/*
 		Hero h=new Hero();
 		Sword sword=new Sword();
 		sword.name="はがねの剣";
@@ -20,5 +20,17 @@ public class Main{
 		}
 		System.out.println(h.name+"のHP:"+h.hp);
 		h.attack(ms[0]);
+		*/
+		//Character c=new Character();
+		//	Dancer dancer = new Dancer();
+		Goblin goblin=new Goblin();
+		goblin.attack();
+		goblin.run();
+		Werewolf werewolf=new Werewolf();
+		werewolf.attack();
+		werewolf.run();
+		DethBat dethbat=new DethBat();
+		dethbat.attack();
+		dethbat.run();
 	}
 }
