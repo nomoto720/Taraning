@@ -1,6 +1,7 @@
 public class SuperHero extends Hero{
 	boolean flying;
 	public SuperHero(){
+		super();
 		System.out.println("SuperHeroコンストラクタ");
 	}
 	public void fly(){
