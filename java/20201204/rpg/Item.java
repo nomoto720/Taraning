@@ -1,7 +1,6 @@
 public class Item{
 	String name;
 	int price;
-	public Item(){}	
 	public Item(String name){
 		this.name=name;
 		this.price=0;
