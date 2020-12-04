@@ -3,7 +3,13 @@ public class Main{
 		//SuperHero sh=new SuperHero();
 		//sh.run();
 		//Weapon w=new Weapon();
+
 		Hero h=new Hero();
+		Sword sword=new Sword();
+		sword.name="はがねの剣";
+		sword.damage=10;
+		h.setSword(sword);
+
 		Matango[] ms=new PoisonMatango[3];
 		ms[0]=new PoisonMatango('A');
 		ms[1]=new PoisonMatango('B');
@@ -13,5 +19,6 @@ public class Main{
 			m.attack(h);
 		}
 		System.out.println(h.name+"のHP:"+h.hp);
+		h.attack(ms[0]);
 	}
 }
