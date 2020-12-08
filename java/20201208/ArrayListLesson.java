@@ -2,6 +2,8 @@ import java.util.*;
 public class ArrayListLesson{
 	public static void main(String[] args){
 		ArrayList<String> names=new ArrayList<>();
+		//<>には参照型しかいれられない。
+		//intを使いたいときはintegerを使う
 		names.add("Jhon");
 		names.add("Paul");
 		names.add("George");
@@ -27,5 +29,14 @@ public class ArrayListLesson{
 		}
 		System.out.println("Paluiのindexは"+names.indexOf("Paul"));
 		names.clear();
+		
+		ArrayList<Integer> list=new ArrayList<>();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		System.out.println(list.get(1));
+		for(int i:list){
+			System.out.println(i);
+		}
 	}
 }
