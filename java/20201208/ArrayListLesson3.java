@@ -2,7 +2,7 @@ import java.util.*;
 public class ArrayListLesson3{
 	public static void main(String[] args){
 		Scanner sc=new Scanner(System.in);
-		List<Slime> slimes=new ArrayList<>();
+		List<Slime> list=new ArrayList<>();
 		System.out.println("ArrayListを使ってみよう！");
 		System.out.println("Listにスライムを追加していってみよう。");
 		while(true){
@@ -14,11 +14,10 @@ public class ArrayListLesson3{
 				System.out.print("スライムの名前を決めてね");
 				String name=sc.nextLine();
 				Slime slime=new Slime(name);
-				slimes.add(slime);
-				slimes.instance(count);
-				count++;
+				slime.appear();	
+				list.add(slime);
 			}else{
-					for(Slime s:slimes){
+					for(Slime s:list){
 						s.attack();
 					}
 				return;
