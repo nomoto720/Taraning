@@ -38,5 +38,18 @@ public class ArrayListLesson{
 		for(int i:list){
 			System.out.println(i);
 		}
+		list.add(2,40);
+		System.out.println(list.get(2));
+		List<String> list2 = Arrays.asList("ジョン","レオン","キャメロン","ジョナサン","カレン");
+		for(String str:list2){
+			System.out.println(str);
+		}
+		List<String> list3 =new ArrayList<>();
+		list3=new LinkedList<>();
+
+
+
+
 	}
+	static void method(List<String> list){}
 }
