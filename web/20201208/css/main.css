@@ -1,0 +1,15 @@
+﻿#floatItems img{
+	width:200px;
+	height:200px;
+	border-radius: 100px;
+}
+#floatItems{
+	margin:auto;
+	display: flex;
+	justify-content:space-around;
+	align-items:center;
+	width:960px;
+	height:500px;
+	background-color:#eee;
+}
+

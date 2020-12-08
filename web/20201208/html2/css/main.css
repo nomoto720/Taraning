@@ -1,0 +1,31 @@
+﻿h1{
+	text-align:center;
+	padding:auto;
+	font-size:50px;
+}
+p{
+	display: block;
+	margin:auto;
+	font-size:16px;
+	color:white;
+	
+}
+.backBox{
+	margin:auto;
+	background-color:#eee;
+	width:960px;
+	height:500px;
+}
+.redBall{
+	background-color:red;
+	width:100px;
+	height:100px;
+	border-radius: 100px;
+	
+}
+.yellowBox{
+	margin:auto;
+	background-color:yellow;
+	width:600px;
+	height:300px;
+}
