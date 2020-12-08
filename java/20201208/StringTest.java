@@ -26,6 +26,7 @@ public class StringTest{
 
 		System.out.println("文字列s4で最初にJavaが登場する位置は"+s1.indexOf("Java"));
 		System.out.println("文字列s4で最後にJavaが登場する位置は"+s4.lastIndexOf("Java"));
+
 		String s5="Java programming";
 		System.out.println("文字列s5の4文字目以降は"+s5.substring(3));
 		System.out.println("文字列s5の4~8文字目は"+s5.substring(3,8));
