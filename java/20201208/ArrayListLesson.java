@@ -16,6 +16,16 @@ public class ArrayListLesson{
 			System.out.println(s);
 		}
 		names.remove(0);
-		System.out.println(names.size());
+		System.out.println(names.size()); //2
+		names.add(0,"John");//先頭に挿入
+		names.set(2,"Ringo");//指定indexを書き換え
+		if(names.isEmpty()){
+			System.out.println("要素はありません");//names.size()==0
+		}
+		if(names.contains("Paul")){
+			System.out.println("paulを含みます");
+		}
+		System.out.println("Paluiのindexは"+names.indexOf("Paul"));
+		names.clear();
 	}
 }
