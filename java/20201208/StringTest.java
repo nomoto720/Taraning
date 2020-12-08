@@ -37,7 +37,7 @@ public class StringTest{
 		String s6=" Java lesson  ";
 		System.out.println("s6の前後の空白を除去すると"+s6.trim());
 		System.out.println("s6のlessonをtutorialに変更すると"+s6.replace("lesson","tutorial"));
-		
+		//可変　mutable	
 		StringBuilder sb=new StringBuilder();
 		for(int i=0;i<100;i++){
 			sb.append("java");
