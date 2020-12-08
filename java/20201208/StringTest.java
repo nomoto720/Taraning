@@ -23,6 +23,7 @@ public class StringTest{
 		if(s4.startsWith("Java")){
 			System.out.println("文字列s4はJavaが先頭にあります");
 		}
+
 		System.out.println("文字列s4で最初にJavaが登場する位置は"+s1.indexOf("Java"));
 		System.out.println("文字列s4で最後にJavaが登場する位置は"+s4.lastIndexOf("Java"));
 		String s5="Java programming";
