@@ -31,6 +31,7 @@ public class StringTest{
 		
 		System.out.println("s5を全部小文字にすると"+s5.toLowerCase());
 		System.out.println("s5を全部大文字にすると"+s5.toUpperCase());
+
 		String s6=" Java lesson  ";
 		System.out.println("s6の前後の空白を除去すると"+s6.trim());
 		System.out.println("s6のlessonをtutorialに変更すると"+s6.replace("lesson","tutorial"));
