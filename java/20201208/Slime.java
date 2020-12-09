@@ -4,7 +4,7 @@ public class Slime{
 	public Slime(String name){
 		this.name=name;
 	}
-	public void instance(){
+	public void appear(){
 		System.out.println(this.name+"が現れた！");
 	}
 	public void attack(){
