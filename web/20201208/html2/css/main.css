@@ -1,11 +1,10 @@
 ﻿h1{
 	text-align:center;
 	padding:auto;
-	font-size:50px;
+	font-size:60px;
+	color:#333131;
 }
 p{
-	display: block;
-	margin:auto;
 	font-size:16px;
 	color:white;
 	
@@ -17,6 +16,12 @@ p{
 	height:500px;
 }
 .redBall{
+	position:absolute;
+	margin-left:130px;
+	margin-top:50px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
 	background-color:red;
 	width:100px;
 	height:100px;
@@ -24,7 +29,11 @@ p{
 	
 }
 .yellowBox{
-	margin:auto;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	position:absolute;
+	margin:100px 180px;
 	background-color:yellow;
 	width:600px;
 	height:300px;
