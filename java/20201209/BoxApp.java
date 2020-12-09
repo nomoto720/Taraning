@@ -12,13 +12,10 @@ public class BoxApp{
 		int select=sc.nextInt();
 		switch(select){
 			case 1:
-				for(int i=0;i<boxs.length;i++){
-					System.out.print(i+"---");
-					boxs[i].displayInfo();
-				}
+				Box.displayInfo2(boxs);	
 				System.out.print("ボールを投入する箱の番号を入力してください>");
 				int boxNumber=sc.nextInt();
-				if(boxNumber>=2){
+				if(boxNumber>=boxs.length){
 					System.out.println("箱の番号の入力が誤っています");
 					continue;
 				}
@@ -27,13 +24,10 @@ public class BoxApp{
 				boxs[boxNumber].insertBalls(insertBall);
 				break;
 			case 2:
-				for(int i=0;i<boxs.length;i++){
-					System.out.print(i+"---");
-					boxs[i].displayInfo();
-				}
+				Box.displayInfo2(boxs);	
 				System.out.print("ボールを取り出す箱の番号を入力してください>");
 				int removeNumber=sc.nextInt();
-				if(removeNumber>=2){
+				if(removeNumber>=boxs.length){
 					System.out.println("箱の番号の入力が誤っています");
 					continue;
 				}

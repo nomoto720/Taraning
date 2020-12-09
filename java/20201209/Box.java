@@ -15,7 +15,7 @@ public class Box{
 		this.totalNumber+=numBall;
 	}
 		public void removeBalls(int takeBall){
-			int takeBallnum=0;
+			int takeBallnum;
 			if(this.num<takeBall){
 				takeBallnum=this.num;
 				totalNumber-=takeBallnum;
@@ -33,5 +33,11 @@ public class Box{
 		}
 		public static void displayTotalNumber(){
 			System.out.println("ボールの合計は"+totalNumber+"個です。");	
+		}
+		public static void displayInfo2(Box[] boxs){
+				for(int i=0;i<boxs.length;i++){
+					System.out.print(i+"---");
+					boxs[i].displayInfo();
+				}
 		}
 }
