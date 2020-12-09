@@ -5,6 +5,11 @@ public class ArrayListTest{
 		points.add(10);
 		points.add(80);
 		points.add(75);
+		points.add(90);
+		points.add(0,25);
+		int removed=points.set(3,50);
+		System.out.println("removedは"+removed);
+		System.out.println(points.get(1));
 		for(int i:points){
 			System.out.println(i);
 		}
