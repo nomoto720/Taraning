@@ -11,5 +11,12 @@ public class ArrayListTest{
 		for(int i=0;i<points.size();i++){
 			System.out.println(points.get(i));
 		}
+		Integer i1=Integer.valueOf(16);
+		int i2=i1.intValue();
+		System.out.println(i1+i2);
+
+		String s1=String.valueOf(16);
+		int i3=Integer.parseInt(s1);
+		System.out.println(s1+i3);
 	}
 }
