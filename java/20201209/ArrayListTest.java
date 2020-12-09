@@ -16,6 +16,24 @@ public class ArrayListTest{
 		for(int i=0;i<points.size();i++){
 			System.out.println(points.get(i));
 		}
+		if(points.size()>2){
+			System.out.println("pointsは2より大きい");
+		}
+		if(points.size()>0){
+			System.out.println("pointsは0より大きい");
+		}
+		if(points.isEmpty()){
+			System.out.println("poinstは0");
+		}
+		if(points.contains(90)){
+			System.out.println("pointsに90の値があります");
+		}
+		System.out.println(points.indexOf(80));
+		System.out.println(points.indexOf(1000));
+		int removeNum=points.remove(2);
+		System.out.println("消された値は"+removeNum);
+		System.out.println(points.get(2));
+		points.clear();
 		Integer i1=Integer.valueOf(16);
 		int i2=i1.intValue();
 		System.out.println(i1+i2);
