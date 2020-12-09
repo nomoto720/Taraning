@@ -10,8 +10,8 @@ public class Cat{
 	public void joined(){
 		System.out.println(this.name+" joined!");
 	}
-	public void catStatus(int num){
-		System.out.println(num+"..."+this.name+"["+this.type+"]"+"("+this.intimacy+")");
+	public void catStatus(){
+		System.out.println(this.name+"["+this.type+"]"+"("+this.intimacy+")");
 	}
 	public void play(){
 		this.intimacy++;
