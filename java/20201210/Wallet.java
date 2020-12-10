@@ -5,6 +5,7 @@ public class Wallet{
 	}
 	public void insertMoney(int inMoney){
 		this.money+=inMoney;
+		System.out.println("財布に"+inMoney+"円入れました");
 	}
 	public void takeOutMoney(int num){
 		int outMoney=this.money<num ? this.money : num;

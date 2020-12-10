@@ -9,9 +9,13 @@ public class VendingMachine{
 		this.money+=coin;
 	}
 	public int cancel(){
-		return this.money;
+		int m=this.money;
+		this.money=0;
+		this.insertMoneyDisplay();
+		return m;
+		
 	}
-	public void purchase(){
+	public int purchase(){
 		if(this.money>=100 && this.num>0){
 			this.num-=1;
 			this.money-=100;

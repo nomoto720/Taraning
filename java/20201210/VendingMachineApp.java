@@ -17,21 +17,25 @@ public class VendingMachineApp{
 				vm.insertMoneyDisplay();
 				break;
 			case 2:
-				int coin=vm.purchase();
+				coin=vm.purchase();
 				if(coin !=-1){
 					wallet.insertMoney(coin);
 				}
 				break;
 			case 3:
-				wallet.takeOutMoney(1);
+				coin=vm.cancel();
+				wallet.insertMoney(coin);
 				break;
 			case 4:
-				wallet.takeOutMoney(1);
+				System.out.print("投入する個数を入力してください>");
+				int num=sc.nextInt();
+				vm.insertGoods(num);	
 				break;
 			case 5:
-				wallet.takeOutMoney(1);
+				wallet.display();
 				break;
 			case 6:
+				System.out.println("アプリケーションを終了します");
 				return;
 			}
 		}
