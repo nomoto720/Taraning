@@ -26,6 +26,18 @@ public class SetLesson3{
 		System.out.println(set);
 		List<String> list=new ArrayList<>(set);
 		System.out.println(list.get(list.size()-1));
+		Iterator<String> it=list.iterator();
+		while(it.hasNext()){
+			String s=it.next();
+			if(s.startsWith("m")){
+				it.remove();
+			}
+		}
+		System.out.println(list);
+
+
+
+
 		/*for(String s:strArray){
 			set.add(s);
 		}
