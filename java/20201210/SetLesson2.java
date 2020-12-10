@@ -1,6 +1,8 @@
 import java.util.*;
 public class SetLesson2{
 	public static void main(String[] args){
+		String str="赤,青,黄,青,緑,緑,黒,白,青,ピンク,黄緑,白
+";
 		Set<String> colors=new HashSet<String>();
 		colors.add("赤");
 		colors.add("青");
