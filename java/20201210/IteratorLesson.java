@@ -11,5 +11,11 @@ public class IteratorLesson{
 			String e=it.next();
 			System.out.println(e);
 		}
+		printList(names);
+	}
+	public static void printList(List<String> list){
+		for(String s:list){
+			System.out.println(s);
+		}
 	}
 }
