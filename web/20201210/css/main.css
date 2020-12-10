@@ -1,12 +1,14 @@
 h1{
-	text-align:center;
-	padding:auto;
 	font-size:60px;
 	color:#333131;
+	text-align:center;
+	line-height:300px;
 }
 p{
 	font-size:16px;
 	color:white;
+	text-align:center;
+	line-height:100px;
 }
 .backBox{
 	margin:auto;
@@ -16,20 +18,13 @@ p{
 }
 .redBall{
 	position:absolute;
-	margin-left:130px;
-	margin-top:50px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
+	margin:-50px auto auto -50px;
 	background-color:red;
 	width:100px;
 	height:100px;
 	border-radius:100px;
 }
 .yellowBox{
-	display:flex;
-	justify-content:center;
-	align-items:center;
 	position:absolute;
 	margin:100px 180px;
 	background-color:yellow;
