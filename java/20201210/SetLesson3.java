@@ -22,8 +22,11 @@ public class SetLesson3{
 "hdndjktido",
 "vymqiltdzq"
 };
-		Set<String> set=new TreeSet<String>();
-		for(String s:strArray){
+		Set<String> set=new TreeSet<>(Arrays.asList(strArray));
+		System.out.println(set);
+		List<String> list=new ArrayList<>(set);
+		System.out.println(list.get(list.size()-1));
+		/*for(String s:strArray){
 			set.add(s);
 		}
 		Iterator<String> it=set.iterator();
@@ -33,5 +36,6 @@ public class SetLesson3{
 			count++;
 		}
 		System.out.println(strArray[strArray.length-1]);
+		*/
 	}
 }
