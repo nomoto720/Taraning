@@ -17,6 +17,7 @@ public class Dice{
 			int count=dice.get(roll)+1;
 			dice.put(roll,count);	
 		}
+		System.out.println("***result***");
 		for(Integer key:dice.keySet()){
 			System.out.println(key+"..."+dice.get(key)+"回");
 		}
