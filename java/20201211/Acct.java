@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class Kaikei{
+public class Acct{
 	public static void main(String[] args)throws Exception{
 		FileInputStream fis=new FileInputStream("data.csv");
 		InputStreamReader isr=new InputStreamReader(fis,"utf-8");
