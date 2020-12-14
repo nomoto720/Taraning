@@ -10,7 +10,7 @@ public class Lesson2{
 			System.out.println("何らかの例外が発生しました");
 		}finally{	
 			try{
-			fw.close();
+				fw.close();
 			}catch(IOException e){
 				;
 			}
