@@ -1,7 +1,30 @@
+import java.util.*;
 public class PC{
-	UsbConnectable device;
+	private App currentApp;
+	private List<App> appList=new ArrayList<>();
+	private UsbConnectable device;
+	public void setApp(App app){
+		this.currentApp=app;
+	}
+	public void addAppli(App app){
+		this.appList.add(app);
+	}
+	public void selectApp(){
+		if(appList.isEmpty()){
+			System.out.println("アプリはインストールされていません");
+			return;
+		}
+		for(int i=0;i<appList.size();i++){
+			System.out.printf("%d...%s%n",i,appList.get(i).name);
+		}
+		Scanner sc=new Scanner(System.in);
+		System.out.print("index>");
+		int index=sc.nextInt();
+		this.setApp(appList.get(index));
+		this.execApp();
+	}
 	public void execApp(){
-		System.out.println("アプリケーションを実行する");
+		this.currentApp.doApp();
 	}
 	public void usb(){
 		this.device.usbConnect();
