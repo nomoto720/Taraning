@@ -14,7 +14,7 @@ public class MusicApp{
 				System.out.println("終了します");
 				return;
 			}
-			String[] fileFormat=fileName.split(".");
+			String[] fileFormat=fileName.split("\\.");
 			int lastIndex=fileName.lastIndexOf(".");
 			String ext=fileName.substring(lastIndex+1);
 			try{
