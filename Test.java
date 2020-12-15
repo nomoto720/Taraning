@@ -566,7 +566,7 @@ public class Test{
 				System.out.println("不正解");
 			}
 		}
-		answer="public String void setName(String name){this.name=name;}";
+		answer="public void setName(String name){this.name=name;}";
 		System.out.print("Q49.フィールド値のString nameにnmaeをセットするメソッドを書け");
 		while(true){
 			input=sc.nextLine();
