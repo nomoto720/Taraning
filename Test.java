@@ -434,7 +434,7 @@ public class Test{
 				System.out.println("不正解");
 			}
 		}
-		answer="sgrs.size()";
+		answer="strs.size()";
 		System.out.print("Q38.Map strsに格納されているペア数を数えよ");
 		while(true){
 			input=sc.nextLine();
@@ -445,7 +445,7 @@ public class Test{
 				System.out.println("不正解");
 			}
 		}
-		answer="sgrs.containsKey("This")";
+		answer="strs.containsKey(\"This\")";
 		System.out.print("Q39.Map strsのkeyに「This」が含まれているか調べよ");
 		while(true){
 			input=sc.nextLine();
@@ -456,7 +456,7 @@ public class Test{
 				System.out.println("不正解");
 			}
 		}
-		answer="sgrs.containsValue(33)";
+		answer="strs.containsValue(33)";
 		System.out.print("Q40.Map strsのバリューに「33」が含まれているか調べよ");
 		while(true){
 			input=sc.nextLine();
@@ -467,7 +467,7 @@ public class Test{
 				System.out.println("不正解");
 			}
 		}
-		answer="sgrs.keySet()";
+		answer="strs.keySet()";
 		System.out.print("Q41.Map strsに格納されているキーの一覧を返す");
 		while(true){
 			input=sc.nextLine();
@@ -478,7 +478,7 @@ public class Test{
 				System.out.println("不正解");
 			}
 		}
-		answer="sgrs.keySet()";
+		answer="strs.keySet()";
 		System.out.print("Q41.Map strsに格納されているキーの一覧を返す");
 		while(true){
 			input=sc.nextLine();
@@ -511,7 +511,7 @@ public class Test{
 				System.out.println("不正解");
 			}
 		}
-		answer="public class FrancePan inmplements Pan{}";
+		answer="public class FrancePan implements Pan{}";
 		System.out.print("Q44.Panインタフェースを実装したFrancePanクラスを作成せよ");
 		while(true){
 			input=sc.nextLine();
@@ -522,7 +522,7 @@ public class Test{
 				System.out.println("不正解");
 			}
 		}
-		answer="Hero h=(Hero)c;
+		answer="Hero h=(Hero)c";
 		System.out.print("Q45.Character c=nwe Hero()で生成したcをHero hにダウンキャストせよ");
 		while(true){
 			input=sc.nextLine();
@@ -533,7 +533,7 @@ public class Test{
 				System.out.println("不正解");
 			}
 		}
-		answer="c instanceof Hero;
+		answer="c instanceof Hero";
 		System.out.print("Q46.Character cの中身をHeroとみなしても大丈夫か判断する条件式を書け");
 		while(true){
 			input=sc.nextLine();
@@ -544,7 +544,7 @@ public class Test{
 				System.out.println("不正解");
 			}
 		}
-		answer="privare int hp";
+		answer="private int hp";
 		System.out.print("Q47.フィールドにあるint hpを他クラスから書き換えられないようにせよ");
 		while(true){
 			input=sc.nextLine();
@@ -577,7 +577,7 @@ public class Test{
 				System.out.println("不正解");
 			}
 		}
-		answer="public String void setName(String name){this.name=name;}";
+		answer="public void setName(String name){this.name=name;}";
 		System.out.print("Q49.フィールド値のString nameにnmaeをセットするメソッドを書け");
 		while(true){
 			input=sc.nextLine();
