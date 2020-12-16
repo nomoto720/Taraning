@@ -1,6 +1,6 @@
 //データベース作成
 CREATE DATABASE myapp
-DEFAULT CHARASET utf8;
+DEFAULT CHARACTER SET utf8;
 
 //データベース削除
 DOROP DATABASE IF EXISTS myapp;

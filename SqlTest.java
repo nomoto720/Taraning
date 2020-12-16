@@ -36,8 +36,19 @@ public class SqlTest{
 				System.out.println("違います");
 			}
 		}
-		answer="";
-		System.out.print("Q4.");
+		answer="DOROP TABLE IF EXISTS men";
+		System.out.print("Q4.menテーブルを削除せよ");
+		while(true){
+			input=sc.nextLine();
+			if(answer.equals(input)){
+				System.out.println("正解です");
+				break;
+			}else{
+				System.out.println("違います");
+			}
+		}
+		answer="INSERT INFO men(id,name,updated) VALUES(1,'Jhon','2020-12-16')";
+		System.out.print("Q5.menテーブルのidに1,nameにjhon,updatedに2020年12月16日と挿入");
 		while(true){
 			input=sc.nextLine();
 			if(answer.equals(input)){
@@ -49,7 +60,7 @@ public class SqlTest{
 		}
 
 		answer="INSERT INTO box(name,age) VALUES('Taro',25);";
-		System.out.print("Q.boxﾃｰﾌﾞのレコードにname:Taro、age:25と作れ");
+		System.out.print("Q.boxﾃｰﾌﾞのレコードにname:Taro、age:25と挿入");
 		while(true){
 			input=sc.nextLine();
 			if(answer.equals(input)){
