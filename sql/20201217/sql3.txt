@@ -1,0 +1,32 @@
+1.1500円未満の本を価格降順で抽出せよ。
+SELECT * FROM books WHERE price<1500;
+
+2.カテゴリー毎の平均価格を求め、平均価格が１０００円以上の本を降順に出力せよ。
+SELECT category,avg(price) FROM books 
+GROUP BY category
+HAVING avg(price) >= 1000;
+
+3.カテゴリー毎の合計価格を求め、昇順で抽出せよ。
+取得カラムはcategory,sum(price)とすること。
+SELECT category,sum(price) FROM books
+GROUP BY category ORDER BY sum(price) ASC;
+
+4.カテゴリーが漫画の項目を'コミック'に変更せよ。
+UPDATE books SET category='コミック'
+WHERE category='漫画';
+
+5.カテゴリーが漫画で価格が400円以上のデータを抽出せよ。
+SELECT * FROM books WHERE category='漫画' AND price>=400;
+
+6.更新日が古い順にデータを5件抽出せよ
+SELECT * FROM books WHERE updated IS NOT NULL 
+ORDER BY updated ASC  LIMIT 5;
+
+7.id 1~5をupdatedが古い順に抽出せよ
+SELECT * FROM books WHERE id<6 ORDER BY updated ASC;
+
+8.カテゴリーが漫画か小説の本を抽出せよ。取得カラムはカテゴリーと価格とすること。
+SELECT category,price FROM books WHERE category='漫画' OR category='小説';
+
+9.タイトルに「の」が入っている本を抽出せよ
+SELECT * FROM books WHERE title LIKE '%の%';
