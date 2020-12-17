@@ -1,32 +1,115 @@
-1.1500円未満の本を価格降順で抽出せよ。
-SELECT * FROM books WHERE price<1500;
+カラム別名　AS句
+SELECT title AS タイトル,price AS 価格 FROM books;
 
-2.カテゴリー毎の平均価格を求め、平均価格が１０００円以上の本を降順に出力せよ。
-SELECT category,avg(price) FROM books 
-GROUP BY category
-HAVING avg(price) >= 1000;
+重複削除
+SELECT DISTINCT category FROM books;
 
-3.カテゴリー毎の合計価格を求め、昇順で抽出せよ。
-取得カラムはcategory,sum(price)とすること。
-SELECT category,sum(price) FROM books
-GROUP BY category ORDER BY sum(price) ASC;
+取得カラムに書ける色々
+SELECT price,price+100,'固定値' FROM books;
 
-4.カテゴリーが漫画の項目を'コミック'に変更せよ。
-UPDATE books SET category='コミック'
-WHERE category='漫画';
+切り捨てfroor
+SELECT floor(120*1.08);
 
-5.カテゴリーが漫画で価格が400円以上のデータを抽出せよ。
-SELECT * FROM books WHERE category='漫画' AND price>=400;
+三桁ごとに、挿入
+SELECT format(12345678,1);
 
-6.更新日が古い順にデータを5件抽出せよ
-SELECT * FROM books WHERE updated IS NOT NULL 
-ORDER BY updated ASC  LIMIT 5;
+CASE WHEN
+SELECT title AS 書名, category AS 分類,
+CASE category
+WHEN '雑誌' THEN '1F'
+WHEN '漫画' THEN '1F'
+ELSE '2F'
+END AS 階
+FROM books;
 
-7.id 1~5をupdatedが古い順に抽出せよ
-SELECT * FROM books WHERE id<6 ORDER BY updated ASC;
+CASE WHEN(if的に分岐できる)
+SELECT title AS 書名,price AS 価格,
+CASE
+WHEN price < 500 THEN 'えんぴつ'
+WHEN price <1000 THEN 'キーホルダー'
+WHEN price <3000 THEN 'ポスター'
+ELSE 'トートバッグ'
+END AS プレゼント
+FROM books;
 
-8.カテゴリーが漫画か小説の本を抽出せよ。取得カラムはカテゴリーと価格とすること。
-SELECT category,price FROM books WHERE category='漫画' OR category='小説';
+//文字数はchar_length()
+SELECT title,char_length(title) FROM books;
 
-9.タイトルに「の」が入っている本を抽出せよ
-SELECT * FROM books WHERE title LIKE '%の%';
+//現在の入力
+INSERT INTO books(title,price,updated)
+VALUES('SQL入門',2800,curdate());
+
+//現在日時
+SELECT now();
+
+//文字列連結
+SELECT concat(title,':',price,'円') AS 表示 FROM books;
+
+//最初のnullではない値をかえす　coalesce
+SELECT title,coalesce(updated,'更新日未記入')
+FROM books;
+
+//副問い合わせ（最初にカッコ内の処理を行いその結果を利用する
+SELECT title,price FROM books
+WHERE price=(SELECT max(price) FROM books);
+
+//内部結合
+SELECT * FROM cds
+JOIN categories
+ON cds.cat_id=categories.id;
+
+//左結合
+SELECT * FROM cds
+LEFT JOIN categories
+ON cds.cat_id=categories.id;
+
+//右結合
+SELECT * FROM cds
+RIGHT JOIN categories
+ON cds.cat_id=categories.id;
+
+//id以外を表示
+SELECT title AS タイトル,price AS 価格,category AS ジャンル FROM cds
+LEFT JOIN categories
+ON cds.cat_id=categories.id;
+
+//取得カラムの指定
+SELECT cds.title,categories.category,cds.price FROM cds
+LEFT JOIN categories
+ON cds.cat_id=categories.id;
+
+//テーブルに別名
+SELECT cd.title,cat.category,cd.price FROM cds AS cd
+LEFT JOIN categories AS cat
+on cd.cat_id=cat.id;
+
+sales_appデータベースを文字コードUTF-8で作成する。
+
+
+
+
+●empsテーブルに、山田,22,1を追加せよ。
+INSERT INTO emps(name,age,dep_id) VALUES
+('山田',22,1);
+
+●depsの全てのデータを抽出せよ。
+SELECT * FROM deps;
+
+●empsテーブルidが5のデータの年齢を１加えよ。
+UPDATE emps SET age=age+1
+WHERE id=5;
+
+●salesテーブルidが16のデータを削除せよ。
+DELETE FROM sales WHERE id=16;
+
+●salesテーブル。sale降順に並び替えろ。
+SELECT * FROM  sales ORDER BY sale DESC;
+
+●empsのデータを年齢降順に抽出せよ。取得項目は、名前、年齢とする。
+SELECT name,age FROM emps ORDER BY age DESC; 
+
+●empsテーブル。年齢が30以上でdep_idが４でないデータを抽出。
+SELECT * FROM emps WHERE age>=30 AND dep_id <> 4;
+
+●empsテーブル。名前に[中]が含まれない人を抽出せよ。
+SELECT * FROM emps WHERE name NOT LIKE '%中%';
