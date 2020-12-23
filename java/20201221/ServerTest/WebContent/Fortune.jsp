@@ -6,7 +6,12 @@
 	String str=strs[rand.nextInt(strs.length)];
 	switch(str){
 	case "大吉":
-
+		break;
+	case "": 
+		break;
+	case "":
+		break;
+	case "":
 }
  %>
 <!DOCTYPE html>
