@@ -2,8 +2,9 @@
     pageEncoding="UTF-8"%>
 
 	<%@ page import="java.util.Date,java.text.SimpleDateFormat" %>
-
+<%-- jspコメント --%>
 <%
+//配列宣言
 String[] luckArray={"超すっきり","すっきり","最悪"};
 int index=(int)(Math.random()*3);
 String luck=luckArray[index];
@@ -15,6 +16,7 @@ String today=sdf.format(date);
 <!DOCTYPE html>
 <html>
 <head>
+<!-- html -->
 <meta charset="UTF-8">
 <title>すっきり占い</title>
 </head>
